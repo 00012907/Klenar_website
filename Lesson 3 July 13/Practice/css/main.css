@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color_1: #f4b41a;
+    --color_2: #143d59;
+
+}
+
+body {
+    background-color: gainsboro;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.box {
+    width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.headline {
+    height: 15vh;
+    width: 100%;
+    background-color: var(--color_2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--color_1);
+    gap: 1rem;
+}
+
+.headline .fa-solid {
+    font-size: 3.5rem;
+}
+
+.upper {
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+.head .upper {
+    background-color: var(--color_2);
+    color: white;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+.head .text {
+    border: 2px solid var(--color_2);
+    padding: 2rem 1rem;
+}
+
+.news .text {
+    margin: 1rem auto;
+    background-color: gainsboro;
+}
+
+.menu {
+    width: 100%;
+}
+
+.menu .head {
+    width: 100%;
+    display: flex;
+    background-color: var(--color_2);
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding-right: 1rem;
+}
+
+.menu .fa-5 {
+    font-size: 1.2rem;
+    border: 1px solid white;
+    padding: 0.4rem 0.5rem;
+}
+
+
+.menu .list_item {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    margin: 0.6rem 0;
+    font-size: 1.2rem;
+    color: var(--color_2);
+    border: 3px solid var(--color_2);
+    padding: 0.6rem;
+}
