@@ -10,6 +10,7 @@
 .container {
     max-width: 1440px;
     margin: auto;
+    overflow-x: hidden;
 }
 
 :root {
@@ -70,8 +71,6 @@ header nav {
     margin: 0 auto;
     background-color: white;
     border-radius: 0 0 6px 6px;
-
-
 }
 
 header .navbar {
@@ -84,7 +83,7 @@ header .navbar {
     position: sticky;
 }
 
-header .navbar .navbar-top {
+.navbar .navbar-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -185,8 +184,89 @@ header .navbar-bottom .btn:hover {
 
 header hr {
     border-top: 1px solid ghostwhite;
-
 }
+
+
+
+header .inputt {
+    display: none;
+}
+
+header .label1 {
+    font-size: 2rem;
+    display: none;
+}
+
+
+
+/* Responsiveness */
+@media(max-width:1200px) {
+    header .label1 {
+        display: inline-block;
+        float: right;
+        padding: 2rem;
+    }
+
+
+    #check:checked~nav {
+        left: 0;
+    }
+
+
+    #check:checked~.label2 {
+        display: inline-block;
+    }
+
+    nav {
+        position: fixed;
+        z-index: 20;
+        transition: 0.3s;
+        align-items: center;
+        left: -100%;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        background-color: white;
+    }
+
+    nav hr {
+        display: none;
+    }
+
+    nav .logo {
+        display: none;
+    }
+
+    .navbar .navbar-top {
+        display: none;
+    }
+
+    header .label2 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.507);
+        display: none;
+    }
+
+    header .navbar-bottom ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    header .navbar-bottom {
+        flex-direction: column;
+    }
+
+    header .navbar-bottom ul a {
+        font-size: 1.5rem;
+    }
+}
+
+
 
 header main .text {
     text-align: center;
@@ -231,22 +311,24 @@ img {
     display: flex;
     max-width: 1300px;
     position: absolute;
-    bottom: -22%;
-    left: 5%;
+    bottom: -180px;
     z-index: 1;
+    left: 80px;
     justify-content: space-between;
     align-items: center;
     gap: 1.5rem;
     background-color: #F7F7F7;
     padding: 3rem;
+    flex-wrap: wrap;
 }
+
 
 .section-1 .card {
     border-radius: 6px;
     display: flex;
     align-items: center;
     gap: 2rem;
-    width: 33%;
+    width: 380px;
     background-color: var(--main-2);
     padding: 2.5rem 1.5rem;
     color: white;
@@ -268,6 +350,7 @@ img {
 }
 
 
+
 .section-1 .card i {
     font-size: 2rem;
     height: 70px;
@@ -277,6 +360,33 @@ img {
     padding: 1.1rem 1rem;
     border: 3px solid white;
     background-color: var(--main);
+}
+
+@media(max-width:1400px) {
+    .section-1 {
+        justify-content: center;
+        position: relative;
+        left: 0;
+    }
+
+    .section-1 .card {
+        width: 100%;
+    }
+
+    header main .text {
+        padding: 2.8rem 0;
+        width: 100%;
+    }
+
+    header main .caption {
+        padding: 1rem 0 0 0;
+    }
+
+    header main span,
+    header main h1 {
+        font-size: 2rem;
+    }
+
 }
 
 .section-2 {
@@ -289,9 +399,6 @@ img {
     gap: 3rem;
 }
 
-.section-2 .text {
-    width: 60%;
-}
 
 .section-2 .pictures {
     width: 50%;
@@ -300,24 +407,23 @@ img {
 }
 
 .section-2 .pictures img {
-    width: 70%;
+    width: 400px;
 }
 
 .section-2 .pictures img.circle {
     position: absolute;
-    left: 25%;
-    bottom: -22%;
+    left: 100px;
+    bottom: -160px;
 }
 
 .section-2 .pictures .band {
     position: absolute;
     top: 0;
     right: 50px;
-    width: 100px;
     background-color: var(--main);
     border-radius: 0 0 80px 80px;
     text-align: center;
-    padding: 1rem;
+    padding: 1rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -343,7 +449,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    width: 45%;
+    width: 550px;
 }
 
 .section-2 .text h1 {
@@ -365,6 +471,7 @@ img {
     justify-content: space-between;
     gap: 1.5rem;
     padding-top: 1.2rem;
+    flex-wrap: wrap;
 }
 
 .section-2 .text .qualities .card i {
@@ -407,6 +514,51 @@ img {
     font-weight: 600;
 }
 
+@media(max-width:1400px) {
+    .section-2 {
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        flex-direction: column;
+    }
+
+    .section-2 .pictures {
+        margin: 180px 0;
+    }
+
+    .section-2 .text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section-2 .pictures img.circle {
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 4px solid var(--main-2);
+        border-radius: 50%;
+    }
+
+    .section-2 .text .qualities .card {
+        justify-content: center;
+        gap: 1.2rem;
+    }
+
+    .section-2 .text h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-2 .pictures .band {
+        left: 10px;
+        width: 100px;
+    }
+
+    .section-2 .signing {
+        justify-content: center;
+    }
+
+}
+
 .section-3 h1 {
     font-size: 3rem;
     text-align: center;
@@ -433,13 +585,14 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .section-3 .services .card {
-    width: 25%;
+    width: 280px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -505,6 +658,17 @@ img {
     margin: 2rem auto;
 }
 
+@media(max-width:1300px) {
+    .section-3 .services {
+        justify-content: center;
+    }
+
+    .section-3 h1 {
+        font-size: 2.5rem;
+    }
+
+}
+
 .section-4 {
     max-width: 1440px;
     margin: 1rem auto;
@@ -519,14 +683,26 @@ img {
     flex-direction: column;
 }
 
+.section-4 .headline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
 
 .section-4 .headline h1 {
     font-size: 3rem;
     font-weight: 800;
+    width: 550px;
 }
 
 .section-4 .headline h1 span {
     color: var(--main-2);
+}
+
+.section-4 .headline p {
+    width: 550px;
 }
 
 .section-4 .headline p {
@@ -538,12 +714,17 @@ img {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: 600px;
+}
+
+.section-4 .row-2 img {
+    width: 600px;
 }
 
 
 
 .section-4 .row-2 .box .card {
-    width: 50%;
+    width: 250px;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -574,13 +755,10 @@ img {
 .section-4 .headline {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem 0;
+    padding: 1.5rem 0.5rem;
     align-items: center;
 }
 
-.section-4 .headline p {
-    width: 50%;
-}
 
 .section-4 .row-2 .card i:hover {
     transform: translateY(-15px);
@@ -593,6 +771,43 @@ img {
 
 .section-4 .card h2:hover {
     color: var(--main-2);
+}
+
+@media(max-width:1300px) {
+    .section-4 .headline {
+        text-align: center;
+    }
+
+    .section-4 .headline p,
+    .section-4 .headline h1 {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .section-4 .headline h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-4 .row-2 {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-4 .row-2 img {
+        width: 100%;
+    }
+
+    .section-4 .row-2 .box {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-4 .row-2 .box .card {
+        width: 400px;
+        margin: 1rem 0;
+    }
 }
 
 .section-5 {
@@ -657,7 +872,9 @@ img {
     gap: 1rem;
     position: absolute;
     top: 250px;
-    left: 90px;
+    left: 70px;
+    flex-wrap: wrap;
+    right: 70px;
 }
 
 .section-5 .row-2 .card {
@@ -666,7 +883,7 @@ img {
     gap: 1rem;
     align-items: center;
     justify-content: center;
-    width: 33%;
+    width: 380px;
     background-color: white;
     border: 20px solid #F7F7F7;
     text-align: center;
@@ -714,8 +931,38 @@ img {
     background-color: var(--main);
 }
 
+@media(max-width:900px) {
+    .section-5 .row-1 {
+        flex-direction: column;
+        padding: 1rem;
+        text-align: center;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .section-5 .row-1 h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media(max-width:1350px) {
+
+    .section-5 .row-2 {
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        left: 1%;
+        right: 1%;
+        top: 50px;
+    }
+
+    .section-5 {
+        margin-bottom: 50px;
+    }
+}
+
 .section-6 {
-    margin: 100px 0;
+    margin: 50px 0;
     background-color: #075F33;
 
 }
@@ -757,6 +1004,12 @@ section {
     font-size: 3rem;
     text-align: center;
     padding: 2rem 0;
+}
+
+@media(max-width:800px) {
+    .section-7 h1 {
+        font-size: 2rem;
+    }
 }
 
 .section-7 h1 span {
@@ -908,6 +1161,28 @@ section {
     padding: 1.2rem 0;
 }
 
+@media(max-width:1450px) {
+    .section-8 {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .section-8 .text {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .section-8 .box details {
+        width: 100%;
+    }
+
+    .section-8 .text h1 {
+        font-size: 2rem;
+    }
+}
 
 .section-9 .sec-container {
     display: flex;
@@ -962,6 +1237,7 @@ section {
     display: flex;
     flex-direction: column;
     left: 20px;
+    right: 15px;
     gap: 1rem;
     width: 340px;
     position: absolute;
@@ -990,6 +1266,18 @@ section {
     overflow: hidden;
 }
 
+@media(max-width:1200px) {
+    .section-9 h1 {
+        font-size: 2rem;
+    }
+
+    .section-9 .sec-container {
+        padding: 2rem 1rem 8rem 1rem;
+        justify-content: center;
+        gap: 8rem;
+    }
+}
+
 footer {
     max-width: 1440px;
     margin: 50px auto;
@@ -1013,6 +1301,13 @@ footer form {
     gap: 1rem;
 }
 
+@media(max-width:1100px) {
+    footer form {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
 footer form label {
     font-weight: 800;
     text-transform: capitalize;
@@ -1026,10 +1321,23 @@ footer .input {
     flex-wrap: wrap;
 }
 
+
+
 footer .input input {
     padding: 1rem 1.5rem;
     border: none;
     width: 400px;
+}
+
+@media(max-width:700px) {
+    footer .input {
+        justify-content: center;
+    }
+
+    footer .input input {
+        width: 300px;
+        padding: 1rem;
+    }
 }
 
 footer .input input:focus {
@@ -1062,16 +1370,28 @@ footer .footer {
     align-items: flex-start;
     color: white;
     padding: 3rem 0;
+    flex-wrap: wrap;
 }
 
 footer .card {
     width: 270px;
+    padding: 1rem 0;
 }
 
 footer .instagram {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+@media(max-width:1000px) {
+    footer .footer {
+        padding: 2rem;
+    }
+
+    footer .footer .card {
+        padding: 1rem;
+    }
 }
 
 footer .instagram .box {
@@ -1232,3 +1552,6 @@ footer .instagram .box .img:hover::before {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.5159313725490196) 100%, rgba(255, 255, 255, 0.34506302521008403) 100%);
 
 } */
+
+
+/* Responsiveness */
