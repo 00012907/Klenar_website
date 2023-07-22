@@ -1,0 +1,381 @@
+body {
+    background-color: black;
+}
+
+:root {
+    --golden: rgba(255, 217, 0, 0.401);
+
+}
+
+.loader-1 {
+    position: relative;
+
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    letter-spacing: 3px;
+    font-size: 3rem;
+}
+
+.loaders {
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    display: grid;
+    height: 80vh;
+    grid-template-columns: auto auto auto;
+
+}
+
+
+.loader-1 .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid black;
+    border-top: 10px solid gold;
+    border-right: 10px solid gold;
+    animation: circle 1s linear infinite;
+
+}
+
+@keyframes circle {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+/* loader-2 */
+.loader-2 .dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 200px;
+}
+
+.loader-2 .dots li {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: red;
+    animation: loader-2-dots 1s steps(1000) infinite alternate;
+}
+
+@keyframes loader-2-dots {
+    0% {
+        height: 15px;
+        width: 15px;
+    }
+
+    25% {
+        height: 20px;
+        width: 20px;
+    }
+
+    50% {
+        height: 25px;
+        width: 25px;
+    }
+
+
+    100% {
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+/* loader-3 */
+.circle-loader {
+    position: relative;
+}
+
+.circle-loader div {
+    width: 15px;
+    height: 15px;
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+    animation: 1.3s opaque ease-in-out infinite both;
+}
+
+.circle-loader>div:nth-child(1) {
+    top: -25px;
+    left: 0;
+}
+
+.circle-loader>div:nth-child(2) {
+    top: -17px;
+    left: 17px;
+    animation-delay: .15s;
+}
+
+.circle-loader>div:nth-child(3) {
+    top: 0;
+    left: 25px;
+}
+
+.circle-loader>div:nth-child(4) {
+    top: 17px;
+    left: 17px;
+    animation-delay: 0.45s;
+}
+
+.circle-loader>div:nth-child(5) {
+    top: 25px;
+    left: 0;
+    animation-delay: 0.6s;
+}
+
+.circle-loader>div:nth-child(6) {
+    top: 17px;
+    left: -17px;
+    animation-delay: 0.75s;
+}
+
+.circle-loader>div:nth-child(7) {
+    top: 0;
+    left: -25px;
+    animation-delay: .9s;
+}
+
+.circle-loader>div:nth-child(8) {
+    top: -17px;
+    left: -17px;
+    animation-delay: 1.05s;
+}
+
+
+@keyframes opaque {
+
+    0%,
+    40%,
+    100% {
+        opacity: 0.1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+}
+
+@keyframes opaque {
+
+    0%,
+    40%,
+    100% {
+        opacity: 0.1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+}
+
+/* loader-4 */
+.dot-loader {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #03A9F4;
+    position: relative;
+    animation: 1.2s scaleDown ease-in-out infinite;
+}
+
+.dot-loader:nth-child(2) {
+    margin: 0 15px;
+    animation: 1.2s scaleDown ease-in-out infinite .15555s;
+}
+
+.dot-loader:nth-child(3) {
+    animation: 1.2s scaleDown ease-in-out infinite .300000s;
+}
+
+@keyframes scaleDown {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleDown {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* loader-5 */
+.square-spinner {
+    width: 55px;
+    display: block;
+    background-color: orange;
+    height: 55px;
+    animation: 3s flip ease-in-out infinite;
+}
+
+@keyframes flip {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
+
+    25% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+    }
+
+    50% {
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+    }
+
+    75% {
+        transform: perspective(120px) rotateX(0deg) rotateY(-180deg);
+    }
+
+    100% {
+        transform: perspective(120px) rotateX(0deg) rotateY(-360deg);
+    }
+}
+
+@keyframes flip {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
+
+    25% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+    }
+
+    50% {
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+    }
+
+    75% {
+        transform: perspective(120px) rotateX(0deg) rotateY(-180deg);
+    }
+
+    100% {
+        transform: perspective(120px) rotateX(0deg) rotateY(-360deg);
+    }
+}
+
+/* loader-6 */
+
+.loader-6 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.loader-6 div {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    align-items: center;
+    background-color: #4a6274;
+}
+
+.loader-6 div:before,
+.loader- div:after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.loader-6 div:before {
+    background-color: #d294af;
+    animation: scale-1 2400ms linear infinite;
+}
+
+.loader-6 div:after {
+    background-color: #d294af;
+    animation: scale-2 2400ms linear infinite;
+}
+
+.loader-6 div:nth-child(2):before,
+.loader-6 div:nth-child(2):after {
+    animation-delay: 300ms;
+}
+
+.loader-6 div:nth-child(3):before,
+.loader-6 div:nth-child(3):after {
+    animation-delay: 600ms;
+}
+
+.loader-6 div:nth-child(4):before,
+.loader-6 div:nth-child(4):after {
+    animation-delay: 900ms;
+}
+
+.loader-6 div:nth-child(5):before,
+.loader-6 div:nth-child(5):after {
+    animation-delay: 1200ms;
+}
+
+.loader-6 div:nth-child(6):before,
+.loader-6 div:nth-child(6):after {
+    animation-delay: 1500ms;
+}
+
+.loader-6 div:nth-child(7):before,
+.loader-6 div:nth-child(7):after {
+    animation-delay: 1800ms;
+}
+
+.loader-6 div:nth-child(8):before,
+.loader-6 div:nth-child(8):after {
+    animation-delay: 2100ms;
+}
+
+.loader-6 div:nth-child(9):before,
+.loader-6 div:nth-child(9):after {
+    animation-delay: 2400ms;
+}
+
+@keyframes scale-1 {
+    0% {
+        transform: scale(0);
+        z-index: 2;
+    }
+
+    50%,
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-2 {
+
+    0%,
+    50% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
